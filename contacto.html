@@ -443,10 +443,7 @@
       Deconstrucción<br><em>Digital</em>
     </a>
     <nav>
-      <a href="#">Trabajo</a>
-      <a href="#">Estudio</a>
-      <a href="#">Nosotros</a>
-      <a href="#" class="active">Contacto</a>
+      <a href="contacto.html" class="active">Contacto</a>
     </nav>
   </header>
 
@@ -458,7 +455,7 @@
       <div class="info-block">
         <div class="info-item">
           <span class="info-label">Email</span>
-          <span class="info-value"><a href="mailto:contacto@deconstrucciondigital.com.ar">hola@deconstrucciondigital.com</a></span>
+          <span class="info-value"><a href="mailto:contacto@deconstrucciondigital.com.ar">contacto@deconstrucciondigital.com.ar</a></span>
         </div>
         <div class="info-item">
           <span class="info-label">Ubicación</span>
@@ -473,6 +470,21 @@
 
     <!-- Right: Form -->
     <div class="right">
+
+      <!--
+        ============================================================
+        INSTRUCCIONES PARA CONECTAR CON GOOGLE FORMS
+        ============================================================
+        1. Creá un Google Form con los campos: Nombre, Email,
+           Empresa / Proyecto, Mensaje.
+        2. Abrí el form → click en los tres puntos → "Obtener
+           enlace de relleno previo" → completá un campo y copiá
+           la URL. Los IDs tienen el formato entry.XXXXXXXXXX.
+        3. Copiá la URL base del form (termina en .../formResponse)
+           y pegala en GOOGLE_FORM_ACTION abajo.
+        4. Reemplazá cada entry.XXXXXXXXXX por los que obtuviste.
+        ============================================================
+      -->
 
       <form id="contactForm">
         <div class="form-group" id="group-nombre">
@@ -516,7 +528,7 @@
   </main>
 
   <footer>
-    <span class="footer-left">© 2025 Deconstrucción Digital</span>
+    <span class="footer-left">© 2026 Deconstrucción Digital</span>
     <a href="index.html" class="back-link">
       <span class="back-arrow"></span>
       Volver al inicio
@@ -526,7 +538,10 @@
 </div>
 
 <script>
-
+  // ============================================================
+  // REEMPLAZÁ ESTA URL POR LA DE TU GOOGLE FORM
+  // Formato: https://docs.google.com/forms/d/e/XXXXX.../formResponse
+  // ============================================================
   const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLScVXXqoiIT0AFI3k6G78_hLcXZ2W5GS1qUpZZ2b1lWiqp9uqA/formResponse';
 
   // Cursor
