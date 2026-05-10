@@ -62,23 +62,6 @@
     opacity: 0.4;
   }
 
-  /* Grid overlay */
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: 
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 80px 80px;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0;
-    transition: opacity 1.2s ease;
-  }
-
-  body.grid-visible::after { opacity: 1; }
-
   /* Layout */
   .page {
     position: relative;
@@ -336,36 +319,6 @@
 
   .cta:hover .cta-arrow { width: 60px; }
 
-  /* Floating counter */
-  .counter {
-    position: fixed;
-    bottom: 48px;
-    right: 48px;
-    z-index: 10;
-    text-align: right;
-    opacity: 0;
-    animation: fadeUp 1s ease 1.8s forwards;
-  }
-
-  .counter-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 4rem;
-    font-weight: 300;
-    line-height: 1;
-    color: rgba(13,13,13,0.06);
-    display: block;
-    transition: color 0.5s ease;
-  }
-
-  .counter:hover .counter-number { color: rgba(13,13,13,0.15); }
-
-  .counter-label {
-    font-size: 0.55rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--fg-muted);
-  }
-
   /* Marquee */
   .marquee-wrap {
     position: fixed;
@@ -430,7 +383,6 @@
     .service:last-child { border-bottom: none; }
     .service:nth-child(2), .service:last-child { padding-left: 0; }
     .hero-meta { gap: 32px; flex-wrap: wrap; }
-    .counter { display: none; }
   }
 </style>
 </head>
@@ -444,10 +396,7 @@
       Deconstrucción<br><em>Digital</em>
     </div>
     <nav>
-      <a href="#">Trabajo</a>
-      <a href="#">Estudio</a>
-      <a href="#">Nosotros</a>
-      <a href="#">Contacto</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
   </header>
 
@@ -470,7 +419,7 @@
         </div>
         <div class="meta-item">
           <span class="meta-label">Desde</span>
-          <span class="meta-value">2019</span>
+          <span class="meta-value">2026</span>
         </div>
       </div>
     </div>
@@ -496,16 +445,11 @@
 
   <footer>
     <div class="footer-left">© 2025 Deconstrucción Digital</div>
-    <a href="#" class="cta">
+    <a href="contacto.html" class="cta">
       Hablemos
       <span class="cta-arrow"></span>
     </a>
   </footer>
-</div>
-
-<div class="counter">
-  <span class="counter-number" id="counterNum">0</span>
-  <span class="counter-label">proyectos</span>
 </div>
 
 <div class="marquee-wrap">
@@ -561,28 +505,6 @@
     el.addEventListener('mouseenter', () => cursor.classList.add('large'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('large'));
   });
-
-  // Grid on scroll
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      document.body.classList.add('grid-visible');
-    } else {
-      document.body.classList.remove('grid-visible');
-    }
-  });
-
-  // Counter animation
-  setTimeout(() => {
-    let count = 0;
-    const target = 47;
-    const el = document.getElementById('counterNum');
-    const step = () => {
-      count++;
-      el.textContent = count;
-      if (count < target) setTimeout(step, 40);
-    };
-    step();
-  }, 2200);
 
   // Subtle parallax on hero text
   document.addEventListener('mousemove', e => {
